@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap");
+
+$primary-color: #14213d;
+$secondry-color: #fca311;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary-color;
+
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+
+  background-color: $secondry-color;
+
+  padding: 1rem;
+  .search {
+    background-color: transparent;
+    border: 2px solid $primary-color;
+    border-radius: 50px;
+
+    padding: 0.5rem 1rem;
+
+    font-size: 1rem;
+    color: #fff;
+    font-family: inherit;
+    &:focus {
+      outline: none;
+      background-color: $primary-color;
+    }
+    &::placeholder {
+      color: #7378c5;
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .movie {
+    width: 20rem;
+    margin: 1rem;
+    border-radius: 5px;
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+    background-color: $secondry-color;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+    &-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0.5rem 1rem;
+      letter-spacing: 0.5px;
+
+      color: #eee;
+      span {
+        background-color: $primary-color;
+        padding: 0.2rem 0.5rem;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+    }
+    &:hover .overview {
+      transform: translateY(0);
+      cursor: pointer;
+    }
+    .overview {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #fff;
+      padding: 1rem;
+      max-height: 100%;
+      transform: translateY(100%);
+      transition: transform 0.3s ease-in;
+    }
+  }
+}
